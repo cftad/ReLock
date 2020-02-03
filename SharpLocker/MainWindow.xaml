@@ -1,0 +1,24 @@
+﻿<Window x:Class="SharpLocker.MainWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:SharpLocker"
+            mc:Ignorable="d"
+            Title="SL" Height="450" Width="800" ShowInTaskbar="False" WindowState="Maximized" WindowStyle="None">
+    <Grid>
+        <Ellipse Width="250" Height="250">
+            <Ellipse.Fill>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="{Binding Source=Image}" />
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
+            </Ellipse.Fill>
+
+        </Ellipse>
+        <Label Name="Username" Content="USERNAME" HorizontalAlignment="Left" Margin="326,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.211,1.192" FontSize="36"/>
+        <Label Name="Status" Content="LOCKED" HorizontalAlignment="Left" Margin="382,223,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" Margin="308,265,0,0" VerticalAlignment="Top" Width="145"/>
+    </Grid>
+</Window>
