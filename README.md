@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="./logo.png" alt="SharpLocker" width="309"></a>
+  <a href="logo.png" alt="SharpLocker" width="309"></a>
   <br>
   SharpLocker
   <br>
@@ -32,8 +32,7 @@ You can [download](/releases/tag/v1.2.0) the latest version.
 
 ## Acknowledgements
 
-This application is based on the original winforms app by @Pickfordmatt 
-https://github.com/Pickfordmatt/SharpLocker
+This application is based on the original winforms app by [@Pickfordmatt](https://github.com/Pickfordmatt/SharpLocker)
 
 ## Support
 
