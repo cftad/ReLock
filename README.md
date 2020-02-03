@@ -22,13 +22,20 @@ SharpLocker
 
 * Supports multiple monitors
 
+## Current State
+
+At the moment there are two separate applications, the legacy winforms app and the rebuild WPF.
+
+* **SharpLocker (WIP)** - The new WPF app, created to enable more control over the styling to better emulate the lockscreen.
+* **SharpLocker-Winforms** - The original winforms app with some additional features.
+  * User Profile Images
+  * Current User Background Image
+
 ## How To Use
-
-
 
 ## Download
 
-You can [download](/releases/tag/v1.2.0) the latest version.
+You can [download](/releases/tag/v1.0.0) the latest version.
 
 ## Acknowledgements
 
