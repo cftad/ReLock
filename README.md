@@ -1,15 +1,40 @@
-# SharpLocker
+<h1 align="center">
+  <br>
+  <a href="./logo.png" alt="SharpLocker" width="309"></a>
+  <br>
+  SharpLocker
+  <br>
+</h1>
 
-SharpLocker helps get current user credentials by popping a fake Windows lock screen, all output is sent to Console which works perfect for Cobalt Strike.
+<h4 align="center">SharpLocker helps get current user credentials by popping a fake Windows lock screen, all output is sent to Console which works perfect for Cobalt Strike.</h4>
 
-## Works
-* Single/Multiple Monitors
-* Windows 10
-* Main monitor needs to be 1080p otherwise the location of the elements are wrong
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#download">Download</a> •
+  <a href="#acknowledgements">Acknowledgements</a> •
+  <a href="#license">License</a>
+</p>
 
-## In Progress
-* Backwards compatibility for Win 7
-* All resolution support
+![Working SharpLocker](screenshot.png)
+
+## Key Features
+
+* Supports multiple monitors
+
+## How To Use
 
 
-![Working SharpLocker](https://github.com/Pickfordmatt/SharpLocker/blob/master/sharplocker.png?raw=true)
+
+## Download
+
+You can [download](/releases/tag/v1.2.0) the latest version.
+
+## Acknowledgements
+
+This application is based on the original winforms app by @Pickfordmatt 
+https://github.com/Pickfordmatt/SharpLocker
+
+## Support
+
+## License
