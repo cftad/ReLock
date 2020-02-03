@@ -1,8 +1,8 @@
 <h1 align="center">
   <br>
-  <a href="logo.png" alt="SharpLocker" width="309"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/cftad/SharpLocker/master/logo.png" alt="Project Name" width="200"></a>
   <br>
-  SharpLocker
+SharpLocker
   <br>
 </h1>
 
