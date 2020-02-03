@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskBar.cs" />
+    <Compile Include="Taskbar.cs" />
     <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

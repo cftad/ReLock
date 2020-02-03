@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SharpLocker
 {
@@ -29,10 +26,8 @@ namespace SharpLocker
             {
                 return Image.FromFile(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Temp\" + Environment.UserName + ".bmp");
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
     }
 }
