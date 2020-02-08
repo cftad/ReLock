@@ -4,21 +4,42 @@
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:SharpLocker"
+            xmlns:vm="clr-namespace:SharpLocker.Models"
             mc:Ignorable="d"
             Title="SL" Height="450" Width="800" ShowInTaskbar="False" WindowState="Maximized" WindowStyle="None">
     <Grid>
-        <Ellipse Width="250" Height="250">
-            <Ellipse.Fill>
-                <ImageBrush>
-                    <ImageBrush.ImageSource>
-                        <BitmapImage UriSource="{Binding Source=Image}" />
-                    </ImageBrush.ImageSource>
-                </ImageBrush>
-            </Ellipse.Fill>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
 
-        </Ellipse>
-        <Label Name="Username" Content="USERNAME" HorizontalAlignment="Left" Margin="326,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.211,1.192" FontSize="36"/>
-        <Label Name="Status" Content="LOCKED" HorizontalAlignment="Left" Margin="382,223,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" Margin="308,265,0,0" VerticalAlignment="Top" Width="145"/>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <!-- User Profile Image -->
+                <Ellipse Width="150" Height="150" Grid.Row="1" Grid.Column="1" Margin="55.666,10,46.333,54">
+                    <Ellipse.Fill>
+                        <ImageBrush>
+
+                        </ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            
+            <Label Name="Username" Content="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="36"/>
+            <Label Name="Status" Content="LOCKED" HorizontalAlignment="Center"  FontSize="20"/>
+            <local:CustomPasswordBox Width="200" Height="30"></local:CustomPasswordBox>
+            </StackPanel>
+
+        </Grid>
+
+
+
+        
     </Grid>
+ 
 </Window>

@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SharpLocker
+namespace SharpLocker.Core
 {
     public class Taskbar
     {
-        private Taskbar()
-        {
-           
-        }
-
         private const int SW_HIDE = 0;
         private const int SW_SHOW = 1;
 
@@ -40,7 +31,10 @@ namespace SharpLocker
                 return handleOfStartButton;
             }
         }
-
+        private Taskbar()
+        {
+            // hide ctor
+        }
 
         public static void Show()
         {
