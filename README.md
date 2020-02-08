@@ -27,6 +27,8 @@ SharpLocker
 
 * Obtains the user's profile image. (Anti-aliased)
 * Obtains the user's current lockscreen (Including Spotlight Images)
+* Displays the current date and time.
+* Uses Segoe MDL2 Assets for icons.
 
 ## Roadmap
 To see the future features, see [Projects](https://github.com/cftad/SharpLocker/projects).
@@ -42,7 +44,7 @@ At the moment there are two separate applications, the legacy winforms app, and 
 ***SharpLocker.Core*** is used for shared logic which can be used by both the WPF and Winforms apps.
 
 ## How To Use
-
+Download the latest copy, 
 
 ## Download
 

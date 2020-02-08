@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using SharpLocker.Annotations;
 using SharpLocker.Core;
 using SharpLocker.Models;
@@ -15,6 +19,10 @@ namespace SharpLocker.ViewModels
     {
         private User user;
 
+        public ImageSource ProfileImage { get; set; }
+        public ImageSource BackgroundImage { get; set; }
+
+
         public LoginViewModel()
         {
             user = new User
@@ -23,6 +31,10 @@ namespace SharpLocker.ViewModels
                 DisplayName = UserSettings.GetDisplayName(),
                 Password = string.Empty
             };
+
+            ProfileImage = new BitmapImage(UserSettings.GetProfileImagePath());
+            BackgroundImage = new BitmapImage(new Uri(@Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes\\TranscodedWallpaper")));
+        
         }
 
         public string UserName
@@ -63,6 +75,9 @@ namespace SharpLocker.ViewModels
                 }
             }
         }
+
+   
+   
 
 
 

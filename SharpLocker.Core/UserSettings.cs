@@ -20,18 +20,10 @@ namespace SharpLocker.Core
         /// <returns>The display name of the current user.</returns>
         public static string GetDisplayName() => System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
 
-        ///// <summary>
-        ///// Gets the profile image for the current user.
-        ///// </summary>
-        ///// <returns></returns>
-        //public static Image GetUserProfileImage()
-        //{
-        //    string profileImagePath = @Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Windows\AccountPictures\");
-        //    string profileImage = Directory.GetFiles(profileImagePath).FirstOrDefault();
-
-        //    // Convert to bitmap
-        //    return AccountPictureConverter.GetImage448(profileImage);
-        //}
+        /// <summary>
+        /// Gets the profile image for the current user.
+        /// </summary>
+        /// <returns></returns>
         public static Bitmap GetProfileImage()
         {
             string profileImagePath = @Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Windows\AccountPictures\");
@@ -41,21 +33,29 @@ namespace SharpLocker.Core
 
         }
 
-        public static string GetProfileImagePath()
+        public static Uri GetProfileImagePath()
         {
             string profileImagePath = @Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Windows\AccountPictures\");
             string profileImage = Directory.GetFiles(profileImagePath).FirstOrDefault();
 
             // Convert to bitmap and save before setting src
-            var final = AccountPictureConverter.GetImage448(profileImage);
-            final.Save("profile-img.png");
-
-            if (File.Exists(".\\profile-img.png"))
+            try
             {
-                return new Uri(@".\profile-img.png", UriKind.Relative).ToString();
+                var final = AccountPictureConverter.GetImage448(profileImage);
+                final.Save("profile-img.png");
+
+                if (File.Exists(".\\profile-img.png"))
+                {
+                    return new Uri(@".\profile-img.png", UriKind.Relative);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
 
-            return null;
+            // Unable to find image, use default icon.
+            return new Uri(".\\Resources\\usericon.png");
         }
 
 

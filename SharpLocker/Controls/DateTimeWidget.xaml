@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="SharpLocker.Controls.DateTimeWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SharpLocker.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="500">
+    <Grid>
+        <Grid>
+            <StackPanel>
+                <Label Name="Time" Content="22:00" HorizontalAlignment="Left"  FontSize="124" Foreground="White" Margin="0,0,0,0" FontFamily="Segoe UI Light" />
+                <Label x:Name="Date" Content="Saturday 8 February" HorizontalAlignment="Left" FontSize="56" Foreground="White" Margin="0,-20,0,0" FontFamily="Segoe UI Light"  />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

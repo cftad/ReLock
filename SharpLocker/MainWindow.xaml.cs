@@ -11,6 +11,7 @@ namespace SharpLocker
     public partial class MainWindow : Window
     {
         private readonly LoginViewModel _loginViewModel;
+
         public MainWindow()
         {
             InitializeComponent();

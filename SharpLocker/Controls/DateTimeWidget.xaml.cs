@@ -16,13 +16,15 @@ using System.Windows.Shapes;
 namespace SharpLocker.Controls
 {
     /// <summary>
-    /// Interaction logic for CustomPasswordBox.xaml
+    /// Interaction logic for DateTimeWidget.xaml
     /// </summary>
-    public partial class CustomPasswordBox : UserControl
+    public partial class DateTimeWidget : UserControl
     {
-        public CustomPasswordBox()
+        public DateTimeWidget()
         {
             InitializeComponent();
+            Time.Content = DateTime.Now.ToString("HH:mm");
+            Date.Content = DateTime.Now.ToString("dddd d MMMM");
         }
     }
 }

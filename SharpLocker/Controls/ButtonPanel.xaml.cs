@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SharpLocker.Controls
 {
     /// <summary>
-    /// Interaction logic for CustomPasswordBox.xaml
+    /// Interaction logic for ButtonPanel.xaml
     /// </summary>
-    public partial class CustomPasswordBox : UserControl
+    public partial class ButtonPanel : UserControl
     {
-        public CustomPasswordBox()
+        public ButtonPanel()
         {
             InitializeComponent();
         }
