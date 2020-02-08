@@ -63,6 +63,16 @@ namespace SharpLocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap accessibility {
+            get {
+                object obj = ResourceManager.GetObject("accessibility", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow {
             get {
                 object obj = ResourceManager.GetObject("arrow", resourceCulture);
@@ -103,6 +113,26 @@ namespace SharpLocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap power {
+            get {
+                object obj = ResourceManager.GetObject("power", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show {
+            get {
+                object obj = ResourceManager.GetObject("show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap thumb_14400082930User {
             get {
                 object obj = ResourceManager.GetObject("thumb_14400082930User", resourceCulture);
@@ -115,7 +145,7 @@ namespace SharpLocker.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Untitled_1 {
             get {
-                object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
+                object obj = ResourceManager.GetObject("Untitled_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
