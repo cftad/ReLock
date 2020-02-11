@@ -9,7 +9,8 @@
             xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
             mc:Ignorable="d"
             d:DataContext="{d:DesignInstance vm:LoginViewModel, IsDesignTimeCreatable=True}"
-            Title="SL" Height="768" Width="1024" ShowInTaskbar="False" WindowState="Maximized" WindowStyle="None">
+            Title="SL" Height="768" Width="1024" ShowInTaskbar="False" WindowState="Maximized" WindowStyle="None" Topmost="True">
+
     <Grid ZIndex="0">
         <Grid ZIndex="1">
             <Grid.ColumnDefinitions>
