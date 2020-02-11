@@ -33,7 +33,7 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <Label Name="Username" Content="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="46" Margin="10" Foreground="White" FontFamily="Segoe UI Light"/>
-                <controls:CustomPasswordBox Width="250" Height="30" Margin="10"/>
+                <controls:CustomPasswordBox Width="280" Height="30" Margin="10"/>
             </StackPanel>
 
             <!-- Date and Time -->
@@ -43,8 +43,15 @@
             <controls:ButtonPanel Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20" Height="50"/>
 
         </Grid>
-        <!-- Background Image -->
-        <Image Source="{Binding BackgroundImage, UpdateSourceTrigger=PropertyChanged}"  Stretch="Fill"/>
+        <!-- Background Image with Blur -->
+        <!-- TODO: Change to Trigger on focus of box and Support Spotlight --> 
+        <Border>
+            <Image Source="{Binding BackgroundImage, UpdateSourceTrigger=PropertyChanged}"  Stretch="Fill"/>
+            <Border.Effect>
+                <BlurEffect Radius="5" KernelType="Gaussian"/>
+            </Border.Effect>
+        </Border>
+        
     </Grid>
 
 </Window>
