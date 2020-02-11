@@ -22,19 +22,17 @@ namespace SharpLocker.ViewModels
         public ImageSource ProfileImage { get; set; }
         public ImageSource BackgroundImage { get; set; }
 
-
         public LoginViewModel()
         {
             user = new User
             {
-                UserName = UserSettings.GetUsername(),
-                DisplayName = UserSettings.GetDisplayName(),
+                UserName = "",
+                DisplayName = LocalSystem.GetLastLoggedOn(),
                 Password = string.Empty
             };
 
             ProfileImage = new BitmapImage(UserSettings.GetProfileImagePath());
             BackgroundImage = new BitmapImage(new Uri(@Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes\\TranscodedWallpaper")));
-        
         }
 
         public string UserName
@@ -75,11 +73,6 @@ namespace SharpLocker.ViewModels
                 }
             }
         }
-
-   
-   
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

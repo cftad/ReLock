@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace SharpLocker.Core
 {
+    /// <summary>
+    /// System Taskbar
+    /// </summary>
     public class Taskbar
     {
         private const int SW_HIDE = 0;
@@ -36,12 +39,18 @@ namespace SharpLocker.Core
             // hide ctor
         }
 
+        /// <summary>
+        /// Shows the system taskbar.
+        /// </summary>
         public static void Show()
         {
             ShowWindow(Handle, SW_SHOW);
             ShowWindow(HandleOfStartButton, SW_SHOW);
         }
 
+        /// <summary>
+        /// Hides the system taskbar.
+        /// </summary>
         public static void Hide()
         {
             ShowWindow(Handle, SW_HIDE);

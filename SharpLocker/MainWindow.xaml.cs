@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using SharpLocker.Core;
 using SharpLocker.ViewModels;
 
 namespace SharpLocker

@@ -9,7 +9,5 @@ namespace SharpLocker.Models
         public string Password { get; set; }
 
         public string DisplayName { get; set; }
-
-
     }
 }

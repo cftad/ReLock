@@ -9,8 +9,8 @@
     <Grid>
         <Grid>
             <StackPanel>
-                <Label Name="Time" Content="22:00" HorizontalAlignment="Left"  FontSize="124" Foreground="White" Margin="0,0,0,0" FontFamily="Segoe UI Light" />
-                <Label x:Name="Date" Content="Saturday 8 February" HorizontalAlignment="Left" FontSize="56" Foreground="White" Margin="0,-20,0,0" FontFamily="Segoe UI Light"  />
+                <Label Content="{Binding Time}" HorizontalAlignment="Left"  FontSize="124" Foreground="White" Margin="0,0,0,0" FontFamily="Segoe UI Light" />
+                <Label Content="{Binding Date}" HorizontalAlignment="Left" FontSize="56" Foreground="White" Margin="0,-20,0,0" FontFamily="Segoe UI Light"  />
             </StackPanel>
         </Grid>
     </Grid>

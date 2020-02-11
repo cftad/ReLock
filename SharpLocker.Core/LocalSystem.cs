@@ -12,13 +12,19 @@ namespace SharpLocker.Core
 {
     public class LocalSystem
     {
+        /// <summary>
+        /// Obtains the last logged on user from Registry
+        /// </summary>
+        /// <returns></returns>
         public static string GetLastLoggedOn()
         {
             const string RegistryRoot = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\";
 
             var keys = GetRegistrySubkeys(RegistryRoot);
 
-            return String.Empty;
+            var lastLoggedOn = keys.FirstOrDefault(x => x.Key.Equals("LastLoggedOnDisplayName")).Value.ToString();
+
+            return lastLoggedOn;
         }
 
         /// <summary>

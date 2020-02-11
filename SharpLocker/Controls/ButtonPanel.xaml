@@ -13,8 +13,8 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Button x:Name="Wifi" Content="&#xE701;" FontFamily="Segoe MDL2 Assets" Foreground="White" Width="Auto" Height="Auto" FontSize="36" Grid.Column="0" Margin="2" Background="{x:Null}" Style="{StaticResource ButtonRevealStyle}"/>
-        <Button x:Name="EaseOfAccess" Content="&#xE776;" FontFamily="Segoe MDL2 Assets" Foreground="White"  Width="Auto" Height="Auto" FontSize="36" Grid.Column="1" Margin="2" Background="{x:Null}" Style="{StaticResource ButtonRevealStyle}"/>
-        <Button x:Name="Power" Content="&#xE7E8;" FontFamily="Segoe MDL2 Assets" Foreground="White"  Width="Auto" Height="Auto" FontSize="36" Grid.Column="2" Margin="2" Background="{x:Null}" Style="{StaticResource ButtonRevealStyle}"/>
+        <Button x:Name="Wifi" Content="&#xE701;" FontFamily="Segoe MDL2 Assets" Foreground="White" Width="Auto" Height="Auto" FontSize="32" Grid.Column="0" Margin="2" Background="{x:Null}" Style="{StaticResource ButtonRevealStyle}"/>
+        <Button x:Name="EaseOfAccess" Content="&#xE776;" FontFamily="Segoe MDL2 Assets" Foreground="White"  Width="Auto" Height="Auto" FontSize="32" Grid.Column="1" Margin="2" Background="{x:Null}" Style="{StaticResource ButtonRevealStyle}"/>
+        <Button x:Name="Power" Content="&#xE7E8;" FontFamily="Segoe MDL2 Assets" Foreground="White"  Width="Auto" Height="Auto" FontSize="32" Grid.Column="2" Margin="2" Background="{x:Null}" Style="{StaticResource ButtonRevealStyle}"/>
     </Grid>
 </UserControl>
