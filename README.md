@@ -1,16 +1,16 @@
 <h1 align="center">
   <br>
-  <a href="#"><img src="logo.png" alt="SharpLocker" width="120"></a>
+  <a href="#"><img src="logo.png" alt="ReLock" width="120"></a>
   <br>
-SharpLocker
+ReLock
   <br>
 </h1>
 <div align="center">
 
-[![Github All Releases](https://img.shields.io/github/stars/cftad/SharpLocker?style=social)]()
+[![Github All Releases](https://img.shields.io/github/stars/cftad/ReLock?style=social)]()
 </div>
 
-<h4 align="center">SharpLocker helps get current user credentials by popping a fake Windows lock screen.</h4>
+<h4 align="center">ReLock helps get current user credentials by popping a fake Windows lock screen.</h4>
 
 
 <p align="center">
@@ -21,7 +21,7 @@ SharpLocker
   <a href="#license">License</a>
 </p>
 
-![Working SharpLocker](screenshot.png)
+![Working ReLock](screenshot.png)
 
 ## Key Features
 
@@ -31,20 +31,23 @@ SharpLocker
 * Uses Segoe MDL2 Assets for icons.
 
 ## Roadmap
-To see the future features, see [Projects](https://github.com/cftad/SharpLocker/projects).
+To see the future features, see [Projects](https://github.com/cftad/ReLock/projects).
 
 ## Current State
 
-At the moment there are two separate applications, the legacy winforms app, and the rebuild WPF. [Fody](https://github.com/Fody/Fody) and [Costura](https://github.com/Fody/Costura) are used to embed `Sharplocker.Core` as part of the main executables.
+At the moment there are two separate applications, the legacy winforms app, and the rebuild WPF. [Fody](https://github.com/Fody/Fody) and [Costura](https://github.com/Fody/Costura) are used to embed `ReLock.Core` as part of the main executables.
 
-* **SharpLocker (WIP)** - The new WPF app, created to enable more control over the styling to better emulate the lockscreen.
+* **ReLock (WIP)** - The new WPF app, created to enable more control over the styling to better emulate the lockscreen.
 
-* **SharpLocker-Winforms** - Current Application soon to be re-written in WPF.
+* **ReLock.Core** - Used for shared logic which can be used by both the WPF and Winforms apps.
 
-***SharpLocker.Core*** is used for shared logic which can be used by both the WPF and Winforms apps.
+
+### Deprecated
+
+* **SharpLocker-Winforms** - The previous application by [@Pickfordmatt](https://github.com/Pickfordmatt/SharpLocker), *intended only to be used in Cobalt Strike.*
 
 ## How To Use
-Download the latest copy, 
+Download the latest copy.
 
 ## Download
 
@@ -55,6 +58,5 @@ You can [download](/releases) the latest version.
 This application is based on the original winforms app by [@Pickfordmatt](https://github.com/Pickfordmatt/SharpLocker)
 
 ## Support
-
 
 ## License
