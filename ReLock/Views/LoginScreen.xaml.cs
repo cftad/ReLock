@@ -3,11 +3,11 @@
 namespace ReLock.Views
 {
     /// <summary>
-    /// Interaction logic for ButtonPanel
+    /// Interaction logic for LoginScreen
     /// </summary>
-    public partial class ButtonPanel : UserControl
+    public partial class LoginScreen : UserControl
     {
-        public ButtonPanel()
+        public LoginScreen()
         {
             InitializeComponent();
         }

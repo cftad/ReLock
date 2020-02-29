@@ -3,6 +3,7 @@ using System.DirectoryServices.AccountManagement;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows.Media.Imaging;
 
 namespace ReLock.Core.Device
 {
@@ -22,9 +23,9 @@ namespace ReLock.Core.Device
         /// <returns></returns>
         public static string GetSid() => UserPrincipal.Current.Sid.ToString();
 
-        public static bool ValidatePassword(string username, string password, ContextType type)
+        public static bool ValidatePassword(string username, string password)
         {
-            var pc = new PrincipalContext(type);
+            var pc = new PrincipalContext(ContextType.Machine);
             return pc.ValidateCredentials(username, password);
         }
 
@@ -36,19 +37,21 @@ namespace ReLock.Core.Device
         public static string GetDisplayName() => System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
 
         #endregion
+
         #region Images
 
         /// <summary>
         /// Gets the profile image for the current user.
         /// </summary>
         /// <returns></returns>
-        public static Bitmap GetProfileImage()
+        public static BitmapImage GetProfileImage()
         {
             string profileImagePath = @Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Windows\AccountPictures\");
             string profileImage = Directory.GetFiles(profileImagePath).FirstOrDefault();
 
-            return AccountPictureConverter.GetImage448(profileImage);
+            var bitmap = AccountPictureConverter.GetImage448(profileImage);
 
+            return AccountPictureConverter.GetImageBitmap(bitmap);
         }
 
         public static Uri GetProfileImagePath()
@@ -76,23 +79,58 @@ namespace ReLock.Core.Device
             return new Uri(".\\Resources\\usericon.png");
         }
 
-        public static Image GetLockScreenImage()
+        public static BitmapImage GetLockScreenImage()
         {
-            // TODO: Refactor as this call can take a few seconds to make.
-            string securityIdentifier = GetSid();
+            var registry = new Registry();
+            // Obtain the last logged on users SID
+            string securityIdentifier = registry.LastLoggedInSid();
 
-            // Get registry values for lockscreen in local root
-            const string RegistryImageRoot = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\";
+            var lockScreenImage = registry.LockScreenImage();
 
-            var keys = LocalSystem.GetRegistrySubkeys(RegistryImageRoot);
+            bool spotlightEnabled = true;
 
-            if (keys.ContainsKey(securityIdentifier))
+            // Obtain current spotlight image if it is enabled 
+            if (spotlightEnabled)
             {
-
+                return new BitmapImage(new Uri(GetSpotlightImage()));
             }
 
+            // %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper
             // Fallback to user set image.
-            return new Bitmap(@Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes\\TranscodedWallpaper"));
+            return new BitmapImage(new Uri(@Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes\\TranscodedWallpaper")));
+        }
+
+        /// <summary>
+        /// Obtains the current spotlight image set.
+        /// </summary>
+        /// <remarks>
+        /// The obtained image is found from
+        /// %USERPROFILE%\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets\
+        /// </remarks>
+        /// <returns></returns>
+        private static string GetSpotlightImage()
+        {
+            //Get Windows Spotlight Images Location Path. 
+            string spotlightDirPath = 
+                @Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets\");
+
+            /* Save the name of the larger image from spotlight dir.
+             * Normally the larger image present in this directory is the current lock screen image. */
+            var imgName = string.Empty;
+
+            DirectoryInfo folderInfo = new DirectoryInfo(spotlightDirPath);
+            long largestSize = 0;
+
+            foreach (var fi in folderInfo.GetFiles())
+            {
+                if (fi.Length > largestSize)
+                {
+                    largestSize = fi.Length;
+                    imgName = fi.Name;
+                }
+            }
+
+            return Path.Combine(spotlightDirPath, imgName); 
         }
 
         #endregion

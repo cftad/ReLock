@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace ReLock.Core
 {
     /// <summary>
     /// Account picture converter
+    /// <para>
     /// https://github.com/Efreeto/AccountPicConverter
+    /// </para>
     /// </summary>
-    class AccountPictureConverter
+    public class AccountPictureConverter
     {
         public static Bitmap GetImage96(string path)
         {
@@ -34,13 +38,29 @@ namespace ReLock.Core
             return GetBitmapImage(b);
         }
 
+        public static BitmapImage GetImageBitmap(Bitmap bitmap)
+        {
+            MemoryStream memory = new MemoryStream();
+
+            bitmap.Save(memory, ImageFormat.Png);
+            memory.Position = 0;
+            var bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = memory;
+            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+            bitmapImage.EndInit();
+
+            return bitmapImage;
+
+        }
+
         public static Bitmap GetBitmapImage(byte[] imageBytes)
         {
             var ms = new MemoryStream(imageBytes);
             return new Bitmap(ms);
         }
 
-        public static long Seek(System.IO.FileStream fs, string searchString, int startIndex)
+        private static long Seek(FileStream fs, string searchString, int startIndex)
         {
             char[] search = searchString.ToCharArray();
             long result = -1, position = 0, stored = startIndex,

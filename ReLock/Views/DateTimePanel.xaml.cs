@@ -3,11 +3,11 @@
 namespace ReLock.Views
 {
     /// <summary>
-    /// Interaction logic for ButtonPanel
+    /// Interaction logic for DateTimePanel
     /// </summary>
-    public partial class ButtonPanel : UserControl
+    public partial class DateTimePanel : UserControl
     {
-        public ButtonPanel()
+        public DateTimePanel()
         {
             InitializeComponent();
         }

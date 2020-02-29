@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
-namespace ReLock.Controls
+namespace ReLock.Views
 {
     /// <summary>
-    /// Interaction logic for CustomPasswordBox.xaml
+    /// Interaction logic for CustomPasswordBox
     /// </summary>
     public partial class CustomPasswordBox : UserControl
     {
         public CustomPasswordBox()
         {
             InitializeComponent();
-
         }
     }
 }

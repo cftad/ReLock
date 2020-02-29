@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReLock.ViewModels
+namespace ReLock.Core.Exfiltration
 {
-    class ViewModelBase 
+    interface IExfiltrate
     {
+        void Exfiltrate();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media.Imaging;
 
 namespace ReLock.Models
 {
@@ -10,6 +11,9 @@ namespace ReLock.Models
 
         public string DisplayName { get; set; }
 
+        public BitmapImage ProfileImage { get; set; }
+
+        public BitmapImage BackgroundImage { get; set; }
 
     }
 }
